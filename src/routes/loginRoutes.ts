@@ -1,47 +1,13 @@
 import {NextFunction, Response, Router} from "express";
 import {RequestWithBody} from "../interfaces/routeInterfaces";
-
-const errorMessage: string = `
-  <div>
-    Please enter the correct information.
-  </div>
-`;
-const loginFormView: string = `
-  <form method="POST">
-    <div>
-      <label for="email">Email</label>
-      <input type="text" name="email" />
-    </div>
-    <div>
-      <label for="password">Password</label>
-      <input type="password" name="password" />
-    </div>
-    <button>Submit</button>
-  </form>
-  `;
-const loggedInHomeView: string = `
-  <div>
-    <div>You are logged in.</div>
-    <a href="/logout">Logout</a>
-  </div>
-`;
-const loggedOutHomeView: string = `
-  <div>
-    <div>You are not logged in.</div>
-    <a href="/login">Login</a>
-  </div>
-`;
-const protectedView: string = `
-  <div>
-    <div>Welcome to protected route,</div>
-    <div>logged in user!</div>
-  </div>  
-`;
-const unprotectedView: string = `
-  <div>
-    <div>Denied</div>
-  </div>
-`;
+import {
+  errorMessage,
+  loggedInHomeView,
+  loggedOutHomeView,
+  loginFormView,
+  protectedView,
+  unprotectedView
+} from "../views/viewData";
 
 function requireAuth(request: RequestWithBody, response: Response, next: NextFunction): void{
   if (request.session && request.session.loggedIn) {
