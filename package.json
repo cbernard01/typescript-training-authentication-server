@@ -1,0 +1,32 @@
+{
+  "name": "typescript-training-authentication-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbernard01/typescript-training-authentication-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cbernard01/typescript-training-authentication-server/issues"
+  },
+  "homepage": "https://github.com/cbernard01/typescript-training-authentication-server#readme",
+  "dependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/cookie-session": "^2.0.38",
+    "@types/express": "^4.17.2",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.1.0",
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}
